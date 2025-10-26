@@ -39,7 +39,7 @@ public class Matrices {
         }
         System.out.println();
 
-        /*int num[] = new int[10];
+        /*int num[] = new int[10];  // ORDENAR
         int matriz[] = {99, -10, 100123, 18, -978, 5623, 463, -9, 287, 49};
         int guardar;
 
