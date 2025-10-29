@@ -13,8 +13,6 @@ public class Cadenas {
 
 
 
-
-
         /*if ( cad1.equals(cad3) ) System.out.println("Yes"); // boolean
         System.out.println( cad2.length() + " " + cad5.length() ); // int
         System.out.println( cad5.charAt(5) ); // char

@@ -1,24 +1,24 @@
 public class ParaEjemplos {
     public static void main(String[] args) {
-        String tels[][] = {
-                { "Juan", "5555-3322"},
-                { "Mary", "5555-8976"},
-                { "Jaime", "5555-1037"},
-                { "Raquel", "5555-1400"},
-        };
-        int i;
-        if (args.length != 1) {
-            System.out.println("Uso: java Teléfono <nombre>");
-        }   else {
-            for ( i=0; i< tels.length; i++){
-                if ( tels[i][0].equals(args[0]) ) {
-                    System.out.println( tels[i][0] + ": " + tels[i][1] );
-                    break;
-                }
+        int val = 1;
+
+        for ( int i = 0; i<8; i++) {
+            for ( int t = 128; t>0; t = t/2) {
+                if ( (val & t) != 0 ) System.out.print("1 ");
+                else System.out.print("0 ");
             }
-            if ( i == tels.length ) {
-                System.out.println("El nombre no se encuentra.");
+            System.out.println();
+            val <<= 1;
+        }
+        System.out.println();
+        val = 128;
+        for ( int i = 0; i<8; i++) {
+            for ( int t = 128; t>0; t=t/2) {
+                if ( (val & t) !=0 ) System.out.print("1 ");
+                else System.out.print("0 ");
             }
+            System.out.println();
+            val >>=1;
         }
     }
 }
