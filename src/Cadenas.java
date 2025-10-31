@@ -12,14 +12,14 @@ public class Cadenas {
         String subcad = cad5.substring(0,32);
 
 
-
+        System.out.println( cad2.compareTo(cad3) + " " + cad2.compareTo(cad5) + " " + cad1.compareTo(cad3));
         /*if ( cad1.equals(cad3) ) System.out.println("Yes"); // boolean
         System.out.println( cad2.length() + " " + cad5.length() ); // int
         System.out.println( cad5.charAt(5) ); // char
-        System.out.println( cad2.compareTo(cad3) + " " + cad2.compareTo(cad5) + " " + cad1.compareTo(cad3));
-        System.out.println( cad1.compareTo(cad4) + " " + cad1.compareTo(cad7) );// Preguntar a deepseek.
+
+        System.out.println( cad1.compareTo(cad4) + " " + cad1.compareTo(cad7) );// Preguntar a deepseek. */
         System.out.println( cad2.indexOf(cad1) + " " + cad6.indexOf(cad3) );
-        System.out.println( cad2.lastIndexOf(cad1) ); */
+        System.out.println( cad2.lastIndexOf(cad1) );
 
     }
 }
