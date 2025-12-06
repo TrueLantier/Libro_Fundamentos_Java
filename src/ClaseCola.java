@@ -1,6 +1,6 @@
 class Cola {
-    char q[];
-    int colocar_lugar, obtener_lugar;
+    private char q[];
+    private int colocar_lugar, obtener_lugar;
     Cola( int dimen) {
         q = new char[dimen+1];
         colocar_lugar = obtener_lugar = 0;
@@ -26,13 +26,25 @@ class Cola {
     }
 }
 
-public class Cola_Demo {
+public class ClaseCola {
     public static void main(String[] args) {
         Cola colaGrande = new Cola(100);
         Cola colaPeque = new Cola(5);
-        // System.out.println(colaGrande[2]);   Interesante, esto da error. Array type expected; found: Cola.
         char ch;
         int i;
+
+        System.out.println("Uso de colaPeque para generar errores.");
+        for ( i=0; i<6; i++) {
+            System.out.print("Intento almacenar " + (char) ('Z' - i));
+            colaPeque.colocar( (char) ( 'Z' - i ));
+            System.out.println();
+        }
+
+        System.out.print("Contenido de colaPeque: ");
+        for ( i = 0; i<6; i++) {
+            ch = colaPeque.obtener();
+            if ( ch != (char) 0) System.out.print(ch);
+        }
 
         /*System.out.println("Uso de colaGrande para almacenar alfabeto.");
         for ( i=0; i<26; i++)
@@ -44,18 +56,5 @@ public class Cola_Demo {
             if ( ch != (char) 0) System.out.print(ch);
         }
         System.out.println("\n");*/
-
-        System.out.println("Uso de colaPeque para generar errores.");
-        for ( i=0; i<6; i++) {
-            System.out.print("Intento almacenar " + (char) ('Z' - i));
-            colaPeque.colocar( (char) ( 'Z' - i ));
-            System.out.println();
-        }
-
-        System.out.print("Contenido de colaPeque: ");
-        for ( i= 0; i<6; i++) {
-            ch = colaPeque.obtener();
-            if ( ch != (char) 0) System.out.print(ch);
-        }
     }
 }
