@@ -1,5 +1,3 @@
-import java.util.concurrent.Callable;
-
 class Cola {
     private char q[];
     private int colocar_lugar, obtener_lugar;
