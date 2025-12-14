@@ -1,32 +1,19 @@
-class Sobre {
-    int x;
+class StaticBloque{
+    static double raíz2;
+    static double raíz3;
 
-    Sobre(){
-        System.out.println("Sobre()");
-        x = 0;
+    static {
+        System.out.println("Dentro del bloque static");
+        raíz2 = Math.sqrt(2);
+        raíz3 = Math.sqrt(3);
     }
-    Sobre(int i) {
-        System.out.println("Sobre(int)");
-        x = i;
-    }
-    Sobre(double d) {
-        System.out.println("Sobre(double)");
-        x = (int) d;
-    }
-    Sobre(int i, int j){
-        System.out.println("Sobre(int, int)");
-        x = i * j;
+
+    StaticBloque(String msj) {
+        System.out.println(msj);
     }
 }
-
-    public class ParaEjemplos {
-        public static void main(String[] args) {
-            Sobre t1 = new Sobre();
-            Sobre t2 = new Sobre(8);
-            Sobre t3 = new Sobre(10.8);
-            Sobre t4 = new Sobre(2, 10);
-
-            System.out.println(t1.x + " " + t2.x + " " + t3.x + " " + t4.x);
-
-        }
+public class ParaEjemplos {
+    public static void main(String[] args) {
+        StaticBloque ob = new StaticBloque("Dentro del constructor");
     }
+}

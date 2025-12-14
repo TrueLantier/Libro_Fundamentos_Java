@@ -1,3 +1,5 @@
+import java.util.concurrent.Callable;
+
 class Cola {
     private char q[];
     private int colocar_lugar, obtener_lugar;
@@ -5,6 +7,23 @@ class Cola {
         q = new char[dimen+1];
         colocar_lugar = obtener_lugar = 0;
     }
+    Cola(Cola ob) {
+        colocar_lugar = ob.colocar_lugar;
+        obtener_lugar = ob.obtener_lugar;
+        q = new char[ob.q.length];
+
+        for (int i = obtener_lugar + 1; i <= colocar_lugar; i++) {
+            q[i] = ob.q[i];
+        }
+    }
+    Cola(char[] c) {
+        colocar_lugar = 0;
+        obtener_lugar = 0;
+        q = new char[c.length+1];
+
+        for (int i = 0;i < c.length; i++) colocar(c[i]);
+    }
+
     void colocar( char ch) {
         if (colocar_lugar == q.length-1 ) {
             System.out.println(" -- La cola se ha llenado.");
@@ -21,40 +40,35 @@ class Cola {
         obtener_lugar++;
         return q[obtener_lugar];
     }
-    void reiniciar_cola() {
-        colocar_lugar = obtener_lugar = 0;
-    }
 }
 
 public class ClaseCola {
     public static void main(String[] args) {
-        Cola colaGrande = new Cola(100);
-        Cola colaPeque = new Cola(5);
+        Cola q1 = new Cola(10);
+
+        char[] nombre = {'A', 'N', 'G', 'E', 'L'};
+        Cola q2 = new Cola(nombre);
+
         char ch;
-        int i;
+        int i; // Esto es porque voy a usar varias veces estas variables
 
-        System.out.println("Uso de colaPeque para generar errores.");
-        for ( i=0; i<6; i++) {
-            System.out.print("Intento almacenar " + (char) ('Z' - i));
-            colaPeque.colocar( (char) ( 'Z' - i ));
-            System.out.println();
+        for (i = 0; i < 10; i++) {
+            q1.colocar((char) ('A' + i));
         }
+        Cola q3 = new Cola(q1);
 
-        System.out.print("Contenido de colaPeque: ");
-        for ( i = 0; i<6; i++) {
-            ch = colaPeque.obtener();
-            if ( ch != (char) 0) System.out.print(ch);
+        for (i = 0; i < 10; i++) {
+            System.out.print(q1.obtener());
         }
+        System.out.println();
 
-        /*System.out.println("Uso de colaGrande para almacenar alfabeto.");
-        for ( i=0; i<26; i++)
-            colaGrande.colocar( (char) ('A' + i ));
-
-        System.out.print("Contenido de colaGrande: ");
-        for ( i=0; i<26; i++) {
-            ch = colaGrande.obtener();
-            if ( ch != (char) 0) System.out.print(ch);
+        for (i = 0; i < 5; i++) {
+            System.out.print(q2.obtener());
         }
-        System.out.println("\n");*/
+        System.out.println();
+
+        for (i = 0; i < 10; i++) {
+            System.out.print(q3.obtener());
+        }
     }
 }
