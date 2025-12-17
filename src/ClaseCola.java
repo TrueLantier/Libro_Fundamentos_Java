@@ -55,7 +55,7 @@ public class ClaseCola {
         }
         Cola q3 = new Cola(q1);
 
-        for (i = 0; i < 10; i++) {
+        for (i = 0; i < 5; i++) {
             System.out.print(q1.obtener());
         }
         System.out.println();
