@@ -1,12 +1,9 @@
 class Pila{
     private char[] q;
-    private int quitar_lugar, poner_lugar;
     private int lugar;
 
     Pila(int dimen) {
         q = new char[dimen+1];
-        poner_lugar = 0;
-        quitar_lugar = 0;
         lugar = 0;
     }
 
