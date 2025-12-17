@@ -6,6 +6,17 @@ class Pila{
         q = new char[dimen+1];
         lugar = 0;
     }
+    Pila(Pila ob) {
+        q = new char[ob.q.length]; //ob.q;
+        lugar = ob.lugar;
+        for (int i = 1; i <= ob.lugar; i++) {
+            q[i] = ob.q[i];
+        }
+    }
+    Pila(char[] a) {
+        q = new char[a.length+1];
+        for (int i = 0; i < a.length; i++) poner(a[i]);
+    }
 
     void poner(char a) {
         ++lugar;
