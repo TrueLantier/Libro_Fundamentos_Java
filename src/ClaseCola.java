@@ -18,7 +18,7 @@ class Cola {
         colocar_lugar = 0;
         obtener_lugar = 0;
         q = new char[c.length+1];
-        for (int i = 0; i < c.length; i++) colocar(c[i]);
+        for (char value : c) colocar(value);
     }
 
     void colocar( char ch) {
