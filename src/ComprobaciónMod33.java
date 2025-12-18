@@ -1,4 +1,13 @@
 public class ComprobaciónMod33 {
+    static String reversa(String cadena) { // Ejercicio 6
+        if (cadena.length() == 1) return cadena;
+        int d = cadena.length();
+        String vacio = "";
+        for (int i = 0; i < d - 1; i++) {
+            vacio += cadena.charAt(i);
+        }
+        return String.valueOf(cadena.charAt(d-1)) + reversa(vacio);
+    }
 
     int suma(int ... v){ // ejercicio 13
         int suma = 0;
@@ -22,5 +31,6 @@ public class ComprobaciónMod33 {
         // 14: Sí se puede.
         // 15: int met(int i, int ... v) | int met(int ... v).
 
+        System.out.println(reversa("angel"));
     }
 }
