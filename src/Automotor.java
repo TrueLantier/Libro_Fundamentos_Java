@@ -1,7 +1,7 @@
 class Carro{
-    int pasajeros;
-    int tanquegas;
-    int kpl;
+    private int pasajeros; // número de pasajeros
+    private int tanquegas; // capacidad del tanque en litros
+    private int kpl; // consumo de gasolina en km por litros
 
     Carro( int p, int t, int k) {
         pasajeros = p;
@@ -14,6 +14,17 @@ class Carro{
     double gasnec( int kilómetros) {
         return (double) kilómetros / kpl;
     }
+}
+
+class Camioneta extends Carro {
+    private int capacidadCarga;
+
+    Camioneta(int p, int f, int m, int c) {
+        super(p, f, m);
+        capacidadCarga = c;
+    }
+    int obtenerCarga() { return capacidadCarga; }
+    void colocarCarga(int c) { capacidadCarga = c; }
 }
 
 public class Automotor {
