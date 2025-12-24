@@ -12,17 +12,17 @@ class FormaDosD {
         ancho = alto = x;
     }
 
-    void mostrarDim() {
-        System.out.println("El ancho y alto son: " + ancho + " " + alto);
-    }
     double obtenerAncho() {return ancho;}
     double obtenerAlto() {return alto;}
     void establecerAncho(double w) {ancho = w;}
     void establecerAlto(double h) {alto = h;}
+    void mostrarDim() {
+        System.out.println("El ancho y alto son: " + ancho + " " + alto);
+    }
 }
 
 class TriangDos extends FormaDosD {
-    String estilo;
+    private String estilo;
 
     TriangDos() {
         super();
@@ -45,34 +45,50 @@ class TriangDos extends FormaDosD {
     }
 }
 
+class ColorTriang extends TriangDos{
+    private String color;
+    ColorTriang(String c, String s, double w, double h) {
+        super(s, w, h);
+        color = c;
+    }
+
+    String getColor() {return color;}
+    void mostrarColor() {
+        System.out.println("El color es " + color);
+    }
+}
+
 public class Herencias {
     public static void main(String[] args) {
-        TriangDos t1 = new TriangDos("isósceles", 4, 4);
-        TriangDos t2 = new TriangDos(5);
-
-        t1.mostrarEstilo();
-        t1.mostrarDim();
-        System.out.println(t1.area());
-        System.out.println();
-        t2.mostrarEstilo();
-        t2.mostrarDim();
-        System.out.println(t2.area());
-
+        C c = new C();
     }
+//    static {
+//        System.out.println("Esto va primero en Herencias.");
+//    }
 }
 
+// Interesante
 class A {
-    int i;
+    A() {
+        System.out.println("Construyendo A.");
+    }
+    static {
+        System.out.println("Esto va primero en A.");
+    }
 }
 class B extends A {
-    int i;
-    B(int a, int b) {
-        super.i = a;
-        i = b;
+    B() {
+        System.out.println("Construyendo B.");
     }
-
-    void mostrar() {
-        System.out.println(super.i);
-        System.out.println(i);
+    static {
+        System.out.println("Esto va primero en B.");
+    }
+}
+class C extends B {
+    C() {
+        System.out.println("Construyendo C.");
+    }
+    static {
+        System.out.println("Esto va primero en C.");
     }
 }

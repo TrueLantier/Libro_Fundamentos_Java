@@ -29,8 +29,18 @@ class Camioneta extends Carro {
 
 public class Automotor {
     public static void main(String[] args) {
-        Camioneta camioneta = new Camioneta(2, 800, 2, 20000);
+        Camioneta semi = new Camioneta(2, 800, 2, 20000);
+        Camioneta pickup = new Camioneta(3, 100, 4, 1000);
+        double litros;
+        int distancia = 252;
 
+        litros = semi.gasolinaNecesaria(distancia);
+        System.out.println("Un semiremolque puede cargar " + semi.obtenerCarga() + " kilos.");
+        System.out.println("Para recorrer " + distancia + " km necesita " + litros + " litros de gasolina.");
+
+        litros = pickup.gasolinaNecesaria(distancia);
+        System.out.println("Un pickup puede cargar " + pickup.obtenerCarga() + " kilos.");
+        System.out.println("Para recorrer " + distancia + " km necesita " + litros + " litros de gasolina.");
 
     }
 }
