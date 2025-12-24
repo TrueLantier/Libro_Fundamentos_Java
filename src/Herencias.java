@@ -60,7 +60,7 @@ class ColorTriang extends TriangDos{
 
 public class Herencias {
     public static void main(String[] args) {
-        C c = new C();
+
     }
 //    static {
 //        System.out.println("Esto va primero en Herencias.");
@@ -91,4 +91,31 @@ class C extends B {
     static {
         System.out.println("Esto va primero en C.");
     }
+}
+
+class X {
+    int a;
+    int b;
+    int c = 100;
+    X(int i) { a = i; }
+}
+class Y extends X{
+    int d;
+    int e = 200;
+    Y(int i, int j) {
+        super(j);
+        b = i;
+        c = 1000;
+
+    }
+}
+class Z extends Y {
+    int f;
+    Z(int i, int j, int k) {
+        super(j, k);
+        d = i;
+        c = 999;
+        e = 666;
+    }
+
 }
