@@ -11,6 +11,10 @@ class FormaDosD {
     FormaDosD(double x) {
         ancho = alto = x;
     }
+    FormaDosD(FormaDosD ob) {
+        ancho = ob.ancho;
+        alto = ob.alto;
+    }
 
     double obtenerAncho() {return ancho;}
     double obtenerAlto() {return alto;}
@@ -35,6 +39,10 @@ class TriangDos extends FormaDosD {
     TriangDos(double x) {
         super(x);
         estilo = "isósceles";
+    }
+    TriangDos(TriangDos ob) {
+        super(ob);
+        estilo = ob.estilo;
     }
 
     double area() {
