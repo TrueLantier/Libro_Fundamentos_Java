@@ -1,4 +1,4 @@
-class FormaDosD {
+abstract class FormaDosD {
     private double ancho;
     private double alto;
     private String nombre;
@@ -21,18 +21,28 @@ class FormaDosD {
         nombre = ob.nombre;
     }
 
-    double obtenerAncho() {return ancho;}
-    double obtenerAlto() {return alto;}
-    void establecerAncho(double w) {ancho = w;}
-    void establecerAlto(double h) {alto = h;}
+    double getAncho() {return ancho;}
+    double getAlto() {return alto;}
+    void setAnchoAncho(double w) {ancho = w;}
+    void setAltoAlto(double h) {alto = h;}
     String getNombre() { return nombre; }
 
     void mostrarDim() {
         System.out.println("El ancho y alto son: " + ancho + " " + alto);
     }
+    abstract double area();
+}
+class Círculo extends FormaDosD {
+    Círculo(double x) {
+        super(x, "Círculo");
+    }
+    Círculo(Círculo ob) {
+        super(ob);
+    }
+
+    @Override
     double area() {
-        System.out.println("area() debe sobreescribirse");
-        return 0.0;
+        return Math.PI * getAncho() * getAncho();
     }
 }
 class Rectang extends FormaDosD {
@@ -50,10 +60,11 @@ class Rectang extends FormaDosD {
     }
 
     boolean esCuadrado() {
-        return obtenerAncho() == obtenerAlto();
+        return getAncho() == getAlto();
     }
 
-    double area() { return obtenerAncho() * obtenerAlto(); }
+    @Override
+    double area() { return getAncho() * getAlto(); }
 }
 class TriangDos extends FormaDosD {
     private String estilo;
@@ -75,8 +86,9 @@ class TriangDos extends FormaDosD {
         estilo = ob.estilo;
     }
 
+    @Override
     double area() {
-        return obtenerAncho() * obtenerAlto() / 2;
+        return getAncho() * getAlto() / 2;
     }
     void mostrarEstilo() {
         System.out.println("El triángulo es: " + estilo);
@@ -97,7 +109,18 @@ class ColorTriang extends TriangDos{
 
 public class Herencias {
     public static void main(String[] args) {
+        FormaDosD[] formas = new FormaDosD[4];
+        formas[0] = new TriangDos("recto", 8.0, 12.0);
+        formas[1] = new Rectang(10);
+        formas[2] = new Rectang(10, 4);
+        formas[3] = new TriangDos(7.0);
 
+        for (int i = 0; i < formas.length; i++) {
+            System.out.println("El objeto es: " + formas[i].getNombre());
+            System.out.println("El área es: " + formas[i].area());
+            System.out.println();
+        }
+        System.out.println(formas[0].getClass() );
     }
 //    static {
 //        System.out.println("Esto va primero en Herencias.");
@@ -106,50 +129,28 @@ public class Herencias {
 
 // Interesante
 class A {
-    int i, j;
-    A(int a, int b) {
-        i = a;
-        j = b;
+    A() {
+        System.out.println("Construyendo A.");
     }
-
-    void mostrar() {
-        System.out.println(i + " " + j);
+    static {
+        System.out.println("Esto va primero en A.");
     }
-//    A() {
-//        System.out.println("Construyendo A.");
-//    }
-//    static {
-//        System.out.println("Esto va primero en A.");
-//    }
 }
 class B extends A {
-    int k;
-    B(int a, int b, int c) {
-        super(a,b);
-        k = c;
+    B() {
+        System.out.println("Construyendo B.");
     }
-
-    void mostrar(String msj) {
-        //super.mostrar();
-        System.out.println(msj + k);
+    static {
+        System.out.println("Esto va primero en B.");
     }
-//    B() {
-//        System.out.println("Construyendo B.");
-//    }
-//    static {
-//        System.out.println("Esto va primero en B.");
-//    }
 }
 class C extends B {
-    C(int a, int b, int c, int d) {
-        super(a, b, c);
+    C() {
+        System.out.println("Construyendo C.");
     }
-//    C() {
-//        System.out.println("Construyendo C.");
-//    }
-//    static {
-//        System.out.println("Esto va primero en C.");
-//    }
+    static {
+        System.out.println("Esto va primero en C.");
+    }
 }
 
 class X {
