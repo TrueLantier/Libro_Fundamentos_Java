@@ -5,6 +5,7 @@ abstract class FormaDosD {
 
     FormaDosD() {
         ancho = alto = 0;
+        nombre = null;
     }
     FormaDosD(double w, double h, String n) {
         ancho = w;
@@ -33,6 +34,9 @@ abstract class FormaDosD {
     abstract double area();
 }
 class Círculo extends FormaDosD {
+    Círculo() {
+        super();
+    }
     Círculo(double x) {
         super(x, "Círculo");
     }
@@ -42,7 +46,7 @@ class Círculo extends FormaDosD {
 
     @Override
     double area() {
-        return Math.PI * getAncho() * getAncho();
+        return Math.PI * (getAncho() / 2) * (getAncho() / 2);
     }
 }
 class Rectang extends FormaDosD {
