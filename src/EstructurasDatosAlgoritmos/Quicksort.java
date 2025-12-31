@@ -1,3 +1,5 @@
+package EstructurasDatosAlgoritmos;
+
 public class Quicksort {
     static void qsort(char[] elems) {
         or(elems, 0, elems.length-1);
@@ -38,5 +40,7 @@ public class Quicksort {
         for (i = 0; i < a.length; i++) {
             System.out.print(a[i]);
         }
+
+
     }
 }

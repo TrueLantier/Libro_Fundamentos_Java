@@ -1,3 +1,5 @@
+import Proyecto1.ParaEjemplos; // Puedo importar un paquete y de ahí sus clases.
+
 abstract class FormaDosD {
     private double ancho;
     private double alto;

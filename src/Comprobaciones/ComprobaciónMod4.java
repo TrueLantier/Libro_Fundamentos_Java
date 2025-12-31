@@ -1,3 +1,5 @@
+package Comprobaciones;
+
 class Mod4{
     double MiMet( int a, int b) { // 5:
         return a*b;

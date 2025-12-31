@@ -1,3 +1,5 @@
+package EstructurasDatosAlgoritmos;
+
 class Cola {
     private char q[];
     private int colocar_lugar, obtener_lugar;

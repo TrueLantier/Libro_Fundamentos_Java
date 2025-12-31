@@ -1,3 +1,5 @@
+package Comprobaciones;
+
 public class ComprobaciónMod5 {
     public static void main(String[] args) {
         double ejercicioUno[] = new double[10];
