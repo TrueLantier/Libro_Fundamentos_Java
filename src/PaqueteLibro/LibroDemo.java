@@ -1,23 +1,5 @@
 package PaqueteLibro;
 
-class Libro{
-    private String título;
-    private String autor;
-    private int fechaPublicación;
-
-    Libro(String t, String a, int f) {
-        título = t;
-        autor = a;
-        fechaPublicación = f;
-    }
-    void mostrar() {
-        System.out.println(título);
-        System.out.println(autor);
-        System.out.println(fechaPublicación);
-        System.out.println();
-    }
-}
-
 public class LibroDemo {
     public static void main(String[] args) {
         Libro libros[] = new Libro[5];
