@@ -1,9 +1,9 @@
-package PaqueteLibro2;
-import PaqueteLibro.Libro;
+package PaqueteLibro3;
+import PaqueteLibro.*;
 
-public class PaqueteLibro2 {
+public class PaqueteLibro3 {
     public static void main(String[] args) {
-        PaqueteLibro.Libro[] libros = new PaqueteLibro.Libro[5];
+        Libro[] libros = new Libro[5];
         libros[0] = new Libro("Principios de Java", "Schildt", 2005);
         libros[1] = new Libro("Java: The Complete Reference", "Schildt", 2005);
         libros[2] = new Libro("The Art of Java", "Schildt y Holmes", 2003);
