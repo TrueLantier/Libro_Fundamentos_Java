@@ -1,6 +1,6 @@
 package Comprobaciones;
 
-public class ComprobaciónMod33 {
+public class ComprobaciónMod6 {
     static String reversa(String cadena) { // Ejercicio 6
         if (cadena.length() == 1) return cadena;
         int d = cadena.length();

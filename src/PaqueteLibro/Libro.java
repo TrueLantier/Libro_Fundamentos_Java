@@ -1,9 +1,9 @@
 package PaqueteLibro;
 
 public class Libro{
-    private String título;
-    private String autor;
-    private int fechaPublicación;
+    protected String título;
+    protected String autor;
+    protected int fechaPublicación;
 
     public Libro(String t, String a, int f) {
         título = t;
