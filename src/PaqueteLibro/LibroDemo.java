@@ -9,6 +9,9 @@ public class LibroDemo {
         libros[3] = new Libro("Tormenta Roja", "Clancy", 1986);
         libros[4] = new Libro("En el camino", "Kerouac", 1955);
 
+        Libro l1 = new Libro("Shadow Slave", "Guilty3", 2019);
+        //l1.autor = "Guiltythree";
+
         for (int i = 0; i < libros.length; i++) { libros[i].mostrar(); }
     }
 }

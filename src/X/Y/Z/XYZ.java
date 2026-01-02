@@ -1,6 +1,6 @@
 package X.Y.Z;
 
-public class PaquetesPrueba1 {
+public class XYZ {
     public static void main(String[] args) {
 
     }
