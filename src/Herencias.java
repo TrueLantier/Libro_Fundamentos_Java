@@ -1,5 +1,3 @@
-import Proyecto1.ParaEjemplos; // Puedo importar un paquete y de ahí sus clases.
-
 abstract class FormaDosD {
     private double ancho;
     private double alto;
@@ -115,6 +113,7 @@ class ColorTriang extends TriangDos{
 
 public class Herencias {
     public static void main(String[] args) {
+
         FormaDosD[] formas = new FormaDosD[4];
         formas[0] = new TriangDos("recto", 8.0, 12.0);
         formas[1] = new Rectang(10);

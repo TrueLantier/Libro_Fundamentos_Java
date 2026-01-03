@@ -3,6 +3,7 @@ import PaqueteLibro.Libro;
 
 public class PaqueteLibro2 {
     public static void main(String[] args) {
+
         PaqueteLibro.Libro[] libros = new PaqueteLibro.Libro[5];
         libros[0] = new Libro("Principios de Java", "Schildt", 2005);
         libros[1] = new Libro("Java: The Complete Reference", "Schildt", 2005);

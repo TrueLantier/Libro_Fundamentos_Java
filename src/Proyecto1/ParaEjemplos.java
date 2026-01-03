@@ -1,5 +1,9 @@
 package Proyecto1;
 
+interface InterfazPrueba {
+
+}
+
 public class ParaEjemplos {
     public static void main(String[] args) {
 
