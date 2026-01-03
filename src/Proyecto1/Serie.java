@@ -78,7 +78,16 @@ class PorTres implements Serie {
 
 class SerieDemo {
     public static void main(String[] args) {
+        PorDos dosOb = new PorDos();
+        PorTres tresOb = new PorTres();
+        Serie ob;
 
-
+        for (int i = 0; i < 5; i++) {
+            ob = dosOb;
+            System.out.println("Valores de PorDos: " + ob.getNext());
+            System.out.println();
+            ob = tresOb;
+            System.out.println("Valores de PorTres: " + ob.getNext());
+        }
     }
 }
