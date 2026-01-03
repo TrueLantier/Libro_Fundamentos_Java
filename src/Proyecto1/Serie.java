@@ -78,16 +78,7 @@ class PorTres implements Serie {
 
 class SerieDemo {
     public static void main(String[] args) {
-        PorDos ob = new PorDos();
-        for (int i = 0; i < 5; i++) {
-            System.out.println("El siguiente valor es: " + ob.getNext());
-        }
-        System.out.println("\nRestableciendo");
-        ob.reset();
-        System.out.println("\nEmpezando en 100");
-        ob.setStart(100);
-        for (int i = 0; i < 5; i++) {
-            System.out.println("El siguiente valor es: " + ob.getNext());
-        }
+
+
     }
 }
