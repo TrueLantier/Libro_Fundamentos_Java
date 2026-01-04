@@ -1,5 +1,34 @@
 package EstructurasDatosAlgoritmos;
 
+class ColaFija implements ICCHAR {
+    private char[] q;
+    private int putloc, getloc;
+
+    private ColaFija(int dim) {
+        q = new char[dim+1];
+        putloc = getloc = 0;
+    }
+
+    public void put(char ch) {
+        if (putloc == q.length-1) {
+            System.out.println(" -- La cola se ha llenado");
+            return;
+        }
+
+        ++putloc;
+        q[putloc] = ch;
+    }
+    public char get() {
+        if (getloc == putloc) {
+            System.out.println(" -- La cola se ha vaciado");
+            return (char) 0;
+        }
+
+        ++getloc;
+        return q[getloc];
+    }
+}
+
 class Cola {
     private char q[];
     private int colocar_lugar, obtener_lugar;
