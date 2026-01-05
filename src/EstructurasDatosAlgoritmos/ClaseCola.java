@@ -28,13 +28,43 @@ class ColaFija implements ICCHAR {
         return q[getloc];
     }
 }
-
 class ColaCircular implements ICCHAR{
     private char[] q;
     private int putloc, getloc;
 
     private ColaCircular(int dim) {
         q = new char[dim+1];
+        putloc = getloc = 0;
+    }
+
+    public void put(char ch) {
+        if (putloc+1 == getloc ||  (putloc == q.length-1 && getloc == 0)) {
+            System.out.println(" -- La cola se ha llenado");
+            return;
+        }
+
+        ++putloc;
+        if (putloc == q.length) { putloc = 0; }
+        q[putloc] = ch;
+    }
+    public char get() {
+        if (getloc == putloc) {
+            System.out.println(" -- La cola se ha vaciado");
+            //if (getloc == q.length-1) { getloc = 0; }
+            return (char) 0;
+        }
+
+        ++getloc;
+        if (getloc == q.length) { getloc = 0; }
+        return q[getloc];
+    }
+}
+class ColaDin implements ICCHAR {
+    private char[] q;
+    private int putloc, getloc;
+
+    ColaDin(int dim) {
+        q = new char[dim];
         putloc = getloc = 0;
     }
 
@@ -50,7 +80,6 @@ class ColaCircular implements ICCHAR{
     public char get() {
         if (getloc == putloc) {
             System.out.println(" -- La cola se ha vaciado");
-            if (getloc == q.length-1) { putloc = getloc = 0; }
             return (char) 0;
         }
 
