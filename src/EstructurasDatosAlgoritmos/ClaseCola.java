@@ -4,7 +4,7 @@ class ColaFija implements ICCHAR {
     private char[] q;
     private int putloc, getloc;
 
-    private ColaFija(int dim) {
+    ColaFija(int dim) {
         q = new char[dim+1];
         putloc = getloc = 0;
     }
@@ -32,7 +32,7 @@ class ColaCircular implements ICCHAR{
     private char[] q;
     private int putloc, getloc;
 
-    private ColaCircular(int dim) {
+    ColaCircular(int dim) {
         q = new char[dim+1];
         putloc = getloc = 0;
     }
@@ -50,7 +50,6 @@ class ColaCircular implements ICCHAR{
     public char get() {
         if (getloc == putloc) {
             System.out.println(" -- La cola se ha vaciado");
-            //if (getloc == q.length-1) { getloc = 0; }
             return (char) 0;
         }
 
@@ -70,8 +69,11 @@ class ColaDin implements ICCHAR {
 
     public void put(char ch) {
         if (putloc == q.length-1) {
-            System.out.println(" -- La cola se ha llenado");
-            return;
+            char[] t = new char[q.length * 2];
+            for (int i = 0; i < q.length; i++) {
+                t[i] = q[i];
+            }
+            q = t;
         }
 
         ++putloc;
@@ -131,31 +133,48 @@ class Cola {
 
 public class ClaseCola {
     public static void main(String[] args) {
-        Cola q1 = new Cola(10);
+        ColaFija q1 = new ColaFija(10);
+        ColaDin q2 = new ColaDin(5);
+        ColaCircular q3 = new ColaCircular(10);
 
-        char[] nombre = {'A', 'N', 'G', 'E', 'L'};
-        Cola q2 = new Cola(nombre);
+        ICCHAR icchar;
 
         char ch;
-        int i; // Esto es porque voy a usar varias veces estas variables
+        int i;
 
+        icchar = q1;
         for (i = 0; i < 10; i++) {
-            q1.colocar((char) ('A' + i));
+            icchar.put((char) ('A' + i));
         }
-        Cola q3 = new Cola(q1);
-
-        for (i = 0; i < 5; i++) {
-            System.out.print(q1.obtener());
+        System.out.println("Contenido de cola fija");
+        for (i = 0; i < 10; i++) {
+            ch = icchar.get();
+            System.out.print(ch);
         }
         System.out.println();
 
-        for (i = 0; i < 5; i++) {
-            System.out.print(q2.obtener());
+        icchar = q2;
+        for (i = 0; i < 10; i++) {
+            icchar.put((char) ('Z' - i));
+        }
+        System.out.println("Contenido de cola dinámica");
+        for (i = 0; i < 10; i++) {
+            ch = icchar.get();
+            System.out.print(ch);
         }
         System.out.println();
 
+        icchar = q3;
         for (i = 0; i < 10; i++) {
-            System.out.print(q3.obtener());
+            icchar.put((char) ('A' + i));
         }
+        System.out.println("Contenido de cola circular");
+        for (i = 0; i < 10; i++) {
+            ch = icchar.get();
+            System.out.print(ch);
+        }
+        System.out.println();
+
+
     }
 }
