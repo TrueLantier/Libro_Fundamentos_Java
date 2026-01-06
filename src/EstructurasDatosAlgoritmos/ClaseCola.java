@@ -27,6 +27,7 @@ class ColaFija implements ICCHAR {
         ++getloc;
         return q[getloc];
     }
+    public void reset() { getloc = putloc = 0; }
 }
 class ColaCircular implements ICCHAR{
     private char[] q;
@@ -57,6 +58,7 @@ class ColaCircular implements ICCHAR{
         if (getloc == q.length) { getloc = 0; }
         return q[getloc];
     }
+    public void reset() { getloc = putloc = 0; }
 }
 class ColaDin implements ICCHAR {
     private char[] q;
@@ -88,6 +90,7 @@ class ColaDin implements ICCHAR {
         ++getloc;
         return q[getloc];
     }
+    public void reset() { getloc = putloc = 0; }
 }
 
 class Cola {
@@ -175,6 +178,14 @@ public class ClaseCola {
         }
         System.out.println();
 
-
+        for (i = 10; i < 20; i++) {
+            icchar.put((char) ('A' + i));
+        }
+        System.out.println("Contenido de cola circular");
+        for (i = 0; i < 10; i++) {
+            ch = icchar.get();
+            System.out.print(ch);
+        }
+        System.out.println();
     }
 }
