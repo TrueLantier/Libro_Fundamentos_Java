@@ -1,4 +1,9 @@
-class Carro{
+interface IAutomotor {
+    int rango();
+    double gasolinaNecesaria(int km);
+}
+
+class Carro implements IAutomotor{
     private int pasajeros; // número de pasajeros
     private int tanquegas; // capacidad del tanque en litros
     private int kpl; // consumo de gasolina en km por litros
@@ -8,10 +13,13 @@ class Carro{
         tanquegas = f;
         kpl = m;
     }
-    int rango(){
+
+    @Override
+    public int rango() {
         return kpl*tanquegas;
     }
-    double gasolinaNecesaria( int kilómetros) {
+    @Override
+    public double gasolinaNecesaria(int kilómetros) {
         return (double) kilómetros / kpl;
     }
 }
