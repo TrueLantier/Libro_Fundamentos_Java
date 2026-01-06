@@ -4,9 +4,18 @@ interface InterfazPruebaDos {
 
 }
 
-public class ParaEjemplos {
+public class ParaEjemplos implements InterfazPrueba{
     public static void main(String[] args) {
+        int[] nums = new int[max];
 
+        for (int i = min; i < 11; i++) {
+            if (i >= max) {
+                System.out.println(msjerror);
+            }   else {
+                nums[i] = i;
+                System.out.println(nums[i] + i);
+            }
+        }
     }
 }
 

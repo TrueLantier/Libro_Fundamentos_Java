@@ -23,25 +23,22 @@ class PorDos implements Serie {
         val += 2;
         return val;
     }
-
     @Override
     public void reset() {
         inicio = 0;
         val = 0;
         ant = -2;
     }
-
     @Override
     public void setStart(int x) {
         inicio = x;
         val = x;
         ant = x - 2;
     }
-
     int getPrior(){ return ant; }
 }
 
-class PorTres implements Serie {
+class PorTres implements Serie, InterfazPruebaDos {
     int inicio;
     int val;
     int ant;
