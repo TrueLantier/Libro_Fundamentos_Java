@@ -23,6 +23,7 @@ public class EjemplosDos {
             throw new ArithmeticException();
         } catch (ArithmeticException e) {
             System.out.println("Excepción capturada.");
+            throw e;
         }
     }
 }
