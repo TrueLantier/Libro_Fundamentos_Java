@@ -30,7 +30,6 @@ public class Ejemplos {
                 System.out.println("Índice fuera de límites.");
             }
         }
-
     }
 }
 
