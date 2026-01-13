@@ -12,6 +12,7 @@ class ColaFija implements ICCHAR {
     @Override
     public void put(char ch) {
         if (putloc == q.length-1) {
+
             System.out.println(" -- La cola se ha llenado");
             return;
         }
