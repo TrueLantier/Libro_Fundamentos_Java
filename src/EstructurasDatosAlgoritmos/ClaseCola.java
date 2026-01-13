@@ -10,21 +10,18 @@ class ColaFija implements ICCHAR {
     }
 
     @Override
-    public void put(char ch) {
+    public void put(char ch) throws ColaFijaLlenaExcepción {
         if (putloc == q.length-1) {
-
-            System.out.println(" -- La cola se ha llenado");
-            return;
+            throw new ColaFijaLlenaExcepción(q.length-1);
         }
 
         ++putloc;
         q[putloc] = ch;
     }
     @Override
-    public char get() {
+    public char get() throws ColaFijaVacíaExcepción{
         if (getloc == putloc) {
-            System.out.println(" -- La cola se ha vaciado");
-            return (char) 0;
+            throw new ColaFijaVacíaExcepción();
         }
 
         ++getloc;
@@ -151,51 +148,54 @@ public class ClaseCola {
         ColaCircular q3 = new ColaCircular(10);
 
         ICCHAR icchar;
-
         char ch;
         int i;
 
-        icchar = q1;
-        for (i = 0; i < 10; i++) {
-            icchar.put((char) ('A' + i));
-        }
-        System.out.println("Contenido de cola fija");
-        for (i = 0; i < 10; i++) {
-            ch = icchar.get();
-            System.out.print(ch);
-        }
-        System.out.println();
+        try {
+            icchar = q1;
+            for (i = 0; i < 11; i++) {
+                icchar.put((char) ('A' + i));
+            }
+            System.out.println("Contenido de cola fija");
+            for (i = 0; i < 10; i++) {
+                ch = icchar.get();
+                System.out.print(ch);
+            }
+            System.out.println();
 
-        icchar = q2;
-        for (i = 0; i < 10; i++) {
-            icchar.put((char) ('Z' - i));
+//            icchar = q2;
+//            for (i = 0; i < 10; i++) {
+//                icchar.put((char) ('Z' - i));
+//            }
+//            System.out.println("Contenido de cola dinámica");
+//            for (i = 0; i < 10; i++) {
+//                ch = icchar.get();
+//                System.out.print(ch);
+//            }
+//            System.out.println();
+//
+//            icchar = q3;
+//            for (i = 0; i < 10; i++) {
+//                icchar.put((char) ('A' + i));
+//            }
+//            System.out.println("Contenido de cola circular");
+//            for (i = 0; i < 10; i++) {
+//                ch = icchar.get();
+//                System.out.print(ch);
+//            }
+//            System.out.println();
+//
+//            for (i = 10; i < 20; i++) {
+//                icchar.put((char) ('A' + i));
+//            }
+//            System.out.println("Contenido de cola circular");
+//            for (i = 0; i < 10; i++) {
+//                ch = icchar.get();
+//                System.out.print(ch);
+//            }
+//            System.out.println();
+        } catch (ColaFijaLlenaExcepción | ColaFijaVacíaExcepción e) {
+            System.out.println(e);
         }
-        System.out.println("Contenido de cola dinámica");
-        for (i = 0; i < 10; i++) {
-            ch = icchar.get();
-            System.out.print(ch);
-        }
-        System.out.println();
-
-        icchar = q3;
-        for (i = 0; i < 10; i++) {
-            icchar.put((char) ('A' + i));
-        }
-        System.out.println("Contenido de cola circular");
-        for (i = 0; i < 10; i++) {
-            ch = icchar.get();
-            System.out.print(ch);
-        }
-        System.out.println();
-
-        for (i = 10; i < 20; i++) {
-            icchar.put((char) ('A' + i));
-        }
-        System.out.println("Contenido de cola circular");
-        for (i = 0; i < 10; i++) {
-            ch = icchar.get();
-            System.out.print(ch);
-        }
-        System.out.println();
     }
 }
