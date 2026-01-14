@@ -35,3 +35,13 @@ Throwable (clase raíz)
           ├── InterruptedException
           ├── CloneNotSupportedException
           └── ...
+
+try {
+    // código que puede lanzar múltiples excepciones
+} catch (FileNotFoundException e) {
+    // Manejo específico para archivo no encontrado
+} catch (IOException e) {
+    // Manejo general para otros errores de E/S
+} catch (Exception e) {
+    // Último recurso para cualquier otra excepción
+}
