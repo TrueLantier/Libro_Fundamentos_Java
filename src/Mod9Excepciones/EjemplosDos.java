@@ -1,7 +1,11 @@
 package Mod9Excepciones;
 
+import java.util.Scanner;
+
 public class EjemplosDos {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        sc.close();
         int[] numer = {4, 8, 16, 32, 64, 128, 256, 512};
         int[] denom = {2, 0, 4, 4, 0, 8};
 
