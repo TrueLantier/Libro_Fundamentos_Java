@@ -7,7 +7,6 @@ import java.sql.SQLException;
 
 public class FuncionesNuevas {
 
-
 // TRY-WITH-RESOURCES
 
 /* Sintaxis
