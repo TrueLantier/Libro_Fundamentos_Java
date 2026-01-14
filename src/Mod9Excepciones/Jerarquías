@@ -1,0 +1,37 @@
+Throwable (clase raíz)
+├── Error (errores graves de sistema/JVM)
+│    ├── VirtualMachineError
+│    │    ├── OutOfMemoryError
+│    │    ├── StackOverflowError
+│    │    └── InternalError
+│    ├── LinkageError
+│    │    ├── NoClassDefFoundError
+│    │    └── IncompatibleClassChangeError
+│    └── ...
+│
+└── Exception (excepciones que se pueden manejar)
+     ├── RuntimeException (Unchecked - No verificadas)
+     │    ├── NullPointerException
+     │    ├── ArrayIndexOutOfBoundsException
+     │    ├── ClassCastException
+     │    ├── IllegalArgumentException
+     │    │    ├── NumberFormatException
+     │    │    └── IllegalStateException
+     │    ├── ArithmeticException
+     │    ├── IndexOutOfBoundsException
+     │    │    ├── ArrayIndexOutOfBoundsException
+     │    │    └── StringIndexOutOfBoundsException
+     │    └── ...
+     │
+     └── Otras Exception (Checked - Verificadas)
+          ├── IOException
+          │    ├── FileNotFoundException
+          │    ├── EOFException
+          │    ├── SocketException
+          │    └── ...
+          ├── SQLException
+          ├── ParseException
+          ├── ClassNotFoundException
+          ├── InterruptedException
+          ├── CloneNotSupportedException
+          └── ...
