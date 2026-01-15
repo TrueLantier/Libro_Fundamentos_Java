@@ -1,9 +1,9 @@
 package EstructurasDatosAlgoritmos;
 
-class ColaFijaLlenaExcepción extends Exception {
+class ColaLlenaExcepción extends Exception {
     int dim;
 
-    ColaFijaLlenaExcepción(int s) { dim = s; }
+    ColaLlenaExcepción(int s) { dim = s; }
 
     @Override
     public String toString() {
@@ -11,7 +11,7 @@ class ColaFijaLlenaExcepción extends Exception {
     }
 }
 
-class ColaFijaVacíaExcepción extends Exception {
+class ColaVacíaExcepción extends Exception {
 
     @Override
     public String toString() { return "\nLa cola está vacía."; }

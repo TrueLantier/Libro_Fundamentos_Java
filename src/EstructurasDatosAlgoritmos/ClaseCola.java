@@ -10,18 +10,18 @@ class ColaFija implements ICCHAR {
     }
 
     @Override
-    public void put(char ch) throws ColaFijaLlenaExcepción {
+    public void put(char ch) throws ColaLlenaExcepción {
         if (putloc == q.length-1) {
-            throw new ColaFijaLlenaExcepción(q.length-1);
+            throw new ColaLlenaExcepción(q.length-1);
         }
 
         ++putloc;
         q[putloc] = ch;
     }
     @Override
-    public char get() throws ColaFijaVacíaExcepción{
+    public char get() throws ColaVacíaExcepción{
         if (getloc == putloc) {
-            throw new ColaFijaVacíaExcepción();
+            throw new ColaVacíaExcepción();
         }
 
         ++getloc;
@@ -40,10 +40,9 @@ class ColaCircular implements ICCHAR{
     }
 
     @Override
-    public void put(char ch) {
+    public void put(char ch) throws ColaLlenaExcepción {
         if (putloc+1 == getloc ||  (putloc == q.length-1 && getloc == 0)) {
-            System.out.println(" -- La cola se ha llenado");
-            return;
+            throw new ColaLlenaExcepción(q.length-1);
         }
 
         ++putloc;
@@ -51,10 +50,9 @@ class ColaCircular implements ICCHAR{
         q[putloc] = ch;
     }
     @Override
-    public char get() {
+    public char get() throws ColaVacíaExcepción{
         if (getloc == putloc) {
-            System.out.println(" -- La cola se ha vaciado");
-            return (char) 0;
+            throw new ColaVacíaExcepción();
         }
 
         ++getloc;
@@ -87,10 +85,9 @@ class ColaDin implements ICCHAR {
         q[putloc] = ch;
     }
     @Override
-    public char get() {
+    public char get() throws ColaVacíaExcepción {
         if (getloc == putloc) {
-            System.out.println(" -- La cola se ha vaciado");
-            return (char) 0;
+            throw new ColaVacíaExcepción();
         }
 
         ++getloc;
@@ -194,7 +191,7 @@ public class ClaseCola {
 //                System.out.print(ch);
 //            }
 //            System.out.println();
-        } catch (ColaFijaLlenaExcepción | ColaFijaVacíaExcepción e) {
+        } catch (ColaLlenaExcepción | ColaVacíaExcepción e) {
             System.out.println(e);
         }
     }
