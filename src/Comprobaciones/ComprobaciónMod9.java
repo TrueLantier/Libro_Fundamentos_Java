@@ -12,6 +12,11 @@ public class ComprobaciónMod9 {
         // 5: La excepción de la superclase antecede a la de una subclase en los catch(su orden).
         // 6: Sí, se pueden relanzar excepciones.
         // 7: Falso, es el código ejecutado cuando se termina el bloque try-catch.
-        // 8:
+        // 8: Todas las excepciones verificadas o personalizadas que descienden de Exception.
+        // Las RuntimeException y Error no.
+        // 9: Mi clase no es una excepción, puesto que no hereda de Exception.
+        // 11: Puede generarse una excepción por un error en la JVM, un error en el programa, o
+        // explícitamente mediante una instrucción throws.
+        // 12: Error y Exception
     }
 }
