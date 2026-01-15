@@ -15,24 +15,22 @@ class Pila{
             q[i] = ob.q[i];
         }
     }
-    Pila(char[] a) {
+    Pila(char[] a) throws PilaLlenaExcepción {
         q = new char[a.length+1];
         for (char c : a) poner(c);
     }
 
-    void poner(char a) {
+    void poner(char a) throws PilaLlenaExcepción {
         ++lugar;
         if (lugar == q.length) {
-            System.out.println(" -- La pila se ha llenado.");
             --lugar;
-            return;
+            throw new PilaLlenaExcepción(q.length-1);
         }
         q[lugar] = a;
     }
-    char quitar() {
+    char quitar() throws PilaVacíaExcepción {
         if (lugar == 0) {
-            System.out.println(" -- La pila se ha vaciado.");
-            return (char) 0;
+            throw new PilaVacíaExcepción();
         }
         --lugar;
         return q[lugar+1];
@@ -40,29 +38,33 @@ class Pila{
 }
 
 public class ClasePila {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws PilaLlenaExcepción {
         Pila op = new Pila(5);
 
         char[] nombre = { 'A', 'N', 'G', 'E', 'L'};
         Pila op3 = new Pila(nombre);
 
-        for (int i = 0; i < 5; i++) {
-            op.poner( (char) ('A' + i));
-        }
-        Pila op2 = new Pila(op);
+        try {
+            for (int i = 0; i < 5; i++) {
+                op.poner( (char) ('A' + i));
+            }
+            Pila op2 = new Pila(op);
 
-        for (int i = 0; i < 5; i++) {
-            System.out.print( op.quitar() );
-        }
-        System.out.println();
+            for (int i = 0; i < 5; i++) {
+                System.out.print( op.quitar() );
+            }
+            System.out.println();
 
-        for (int i = 0; i < 5; i++) {
-            System.out.print( op3.quitar() );
-        }
-        System.out.println();
+            for (int i = 0; i < 5; i++) {
+                System.out.print( op3.quitar() );
+            }
+            System.out.println();
 
-        for (int i = 0; i < 5; i++) {
-            System.out.print( op2.quitar() );
+            for (int i = 0; i < 5; i++) {
+                System.out.print( op2.quitar() );
+            }
+        } catch (PilaLlenaExcepción | PilaVacíaExcepción e) {
+            System.out.println(e);
         }
     }
 }
