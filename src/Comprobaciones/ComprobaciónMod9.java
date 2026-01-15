@@ -18,5 +18,9 @@ public class ComprobaciónMod9 {
         // 11: Puede generarse una excepción por un error en la JVM, un error en el programa, o
         // explícitamente mediante una instrucción throws.
         // 12: Error y Exception
+        // 13: Permitir que las excpeciones con el mismo código puedan ser capturadas y procesadas por el mismo
+        // catch.
+        // 14: Mi código no debería generalmente capturar/atrapar excepciones de Error, pues esto significaría
+        // que hay serios problemas con la JVM o mi uso de ella.
     }
 }
