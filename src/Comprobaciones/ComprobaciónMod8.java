@@ -19,5 +19,10 @@ public class ComprobaciónMod8 {
         // 10: Sirven para declarar constantes generales que tendrán uso en distintos archivos.
         // 11: Cierto.
         // 12: java.lang
+        // 13: default.
+        // 14: Sí.
+        // 15: Haciendo el método default.
+        // 16: Como los métodos estáticos de clases: InterfaceName.staticMethodName
+        // 17: Sí.
     }
 }
