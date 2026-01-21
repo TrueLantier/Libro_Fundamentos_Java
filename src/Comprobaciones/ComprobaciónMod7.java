@@ -1,5 +1,7 @@
 package Comprobaciones;
 
+import Proyecto1.Serie;
+
 public class ComprobaciónMod7 {
     public static void main(String[] args) {
         // 1: Una superclase no tiene acceso a los miembros de una subclase. Una subclase sí tiene acceso
@@ -23,5 +25,31 @@ public class ComprobaciónMod7 {
         // 10: Object
         // 11: Cierto, si una clase contiene un método abstracto debe declararse abstracta.
         // 12: final , para constantes con nombre.
+        // 13: Es de tipo A.
+        /*
+        El método makeObj() tiene un tipo de retorno declarado (en su firma) de A.
+        Esto es lo que el compilador usa para determinar el tipo de la expresión makeObj(1),
+        independientemente de la ruta de ejecución que se tome en tiempo de ejecución (new A() o new B()).
+        En tiempo de ejecución, makeObj(1) devolverá efectivamente un objeto de tipo B.
+        Sin embargo, la referencia almacenada en myRef será de tipo A (la referencia es de tipo superclase,
+        apuntando a un objeto de subclase). Esto es polimorfismo clásico.
+        Por lo tanto, el compilador infiere que myRef es de tipo A.
+        Podrás llamar solo a los métodos definidos en A (a menos que hagas un cast posterior a B).
+         */
+        // 14: Será de tipo B. Casteo.
+        System.out.println(Prueba('a'));
+        char myref = (char) Prueba(1);
+    }
+
+    static int Prueba(int a) {
+        char b = 'b';
+        long l = 1L;
+        return b;
+
+    }
+
+    static char PruebaDos(char a) {
+        int num = 1;
+        return (char) num;
     }
 }
