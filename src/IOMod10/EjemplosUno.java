@@ -12,11 +12,11 @@ public class EjemplosUno {
         for (int i = 0; i < 5; i++) {
             System.out.print((char) datos[i]);
         }
-//        System.in.read();
-//        System.out.println();
-//        int b;
-//        b = 'X';
-//        System.out.write(b);
-//        System.out.write('\n');
+
+        System.out.println();
+        int b;
+        b = 'X';
+        System.out.write(b);
+        System.out.write('\n');
     }
 }
