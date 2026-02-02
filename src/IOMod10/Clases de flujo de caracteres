@@ -1,0 +1,21 @@
+Clase de ﬂujo de caracteres         Significado
+BufferedReader                      Flujo de caracteres de entrada almacenado en búfer
+BufferedWriter                      Flujo de caracteres de salida almacenado en búfer
+CharArrayReader                     Flujo de entrada que lee a partir de una matriz de caracteres
+CharArrayWriter                     Flujo de salida que escribe a una matriz de caracteres
+FileReader                          Flujo de entrada que lee a partir de un archivo
+FileWriter                          Flujo de salida que escribe a un archivo
+FilterReader                        Lector filtrado
+FilterWriter                        Escritura filtrada
+InputStreamReader                   Flujo de entrada que traduce bytes en caracteres
+LineNumberReader                    Flujo de entrada que cuenta líneas
+OutputStream                        WriterFlujo de salida que traduce caracteres en bytes
+PipedReader                         Línea de entrada
+PipedWriter                         Línea de salida
+PrintWriter                         Flujo de salida que contiene print( ) y println( )
+PushbackReader                      Flujo de entrada que permite que los caracteres se regresen al ﬂujo
+                                    de entrada
+Reader                              Clase abstracta que describe la entrada de ﬂujo de caracteres
+StringReader                        Flujo de entrada que lee a partir de una cadena
+StringWriter                        Flujo de salida que escribe a una cadena
+Writer                              Clase abstracta que describe la salida de ﬂujo de caracteres

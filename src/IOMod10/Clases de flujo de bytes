@@ -1,0 +1,24 @@
+Clase de ﬂujo de byte               Significado
+BufferedInputStream                 Flujo de entrada almacenado en el búfer
+BufferedOutputStream                Flujo de salida almacenado en el búfer
+ByteArrayInputStream                Flujo de entrada que lee a partir de una matriz de bytes
+ByteArrayOutputStream               Flujo de salida que escribe a una matriz de bytes
+DataInputStream                     Flujo de entrada que contiene métodos para leer los tipos estándar
+                                    de datos de Java
+DataOutputStream                    Flujo de salida que contiene métodos para escribir los tipos
+                                    estándar de datos de Java
+FileInputStream                     Flujo de entrada que lee desde un archivo
+FileOutputStream                    Flujo de salida que escribe a un archivo
+FilterInputStream                   Implementa InputStream
+FilterOutputStream                  Implementa OutputStream
+InputStream                         Clase abstracta que deﬁne la entrada de ﬂujo
+ObjectInputStream                   Flujo de entrada para objetos
+ObjectOutputStream                  Flujo de salida para objetos
+OutputStream                        Clase abstracta que describe la salida de ﬂujo
+PipedInputStream                    Línea de entrada
+PipedOutputStream                   Línea de salida
+PrintStream                         Flujo de salida que contiene print() y println()
+PushbackInputStream                 Flujo de entrada que permite que los bytes regresen al ﬂujo
+RandomAccessFile                    Soporta la E/S de archivo de acceso directo
+SequenceInputStream                 Flujo de entrada que es una combinación de dos o más ﬂujos de entrada,
+                                    los cuales se leerán de manera secuencial, uno después de otro.
