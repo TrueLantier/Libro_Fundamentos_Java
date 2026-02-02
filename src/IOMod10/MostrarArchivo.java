@@ -36,7 +36,5 @@ public class MostrarArchivo {
                 System.out.println("Error cerrando el archivo.");
             }
         }
-
-
     }
 }
