@@ -1,4 +1,4 @@
-package IOMod10.RandomAccess;
+package IOMod10.ByteStreams.RandomAccess;
 import java.io.*;
 
 public class RandomAccessDemo {
