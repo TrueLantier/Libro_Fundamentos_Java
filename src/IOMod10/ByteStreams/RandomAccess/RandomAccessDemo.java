@@ -25,7 +25,7 @@ public class RandomAccessDemo {
 
             System.out.println();
 
-
+            System.out.println("Aquí esta cada otro valor.");
 
         }   catch (IOException exc) {
             System.out.println("Error de E/S: " + exc);
