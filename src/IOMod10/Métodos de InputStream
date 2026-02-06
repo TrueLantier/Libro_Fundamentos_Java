@@ -1,0 +1,34 @@
+// █ Lectura de datos
+int read()
+// Lee un byte y lo retorna como int (0-255)
+// Retorna -1 si alcanzó el fin del stream
+
+int read(byte[] b)
+// Lee bytes y los almacena en el array b
+// Retorna número de bytes leídos, o -1 si fin del stream
+
+int read(byte[] b, int off, int len)
+// Lee hasta len bytes en b comenzando en posición off
+// Retorna número de bytes leídos, o -1 si fin del stream
+
+// █ Control de posición
+long skip(long n)
+// Salta n bytes del input
+// Retorna número de bytes realmente saltados
+
+void mark(int readlimit)
+// Marca posición actual en el stream
+
+void reset()
+// Regresa a la última posición marcada
+
+boolean markSupported()
+// Retorna true si el stream soporta mark/reset
+
+// █ Información del stream
+int available()
+// Retorna estimación de bytes disponibles para leer sin bloquear
+
+// █ Gestión de recursos
+void close()
+// Cierra el stream y libera recursos

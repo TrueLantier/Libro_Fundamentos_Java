@@ -1,0 +1,17 @@
+// █ Escritura de datos
+void write(int b)
+// Escribe el byte especificado (8 bits bajos del int)
+
+void write(byte[] b)
+// Escribe todos los bytes del array b
+
+void write(byte[] b, int off, int len)
+// Escribe len bytes de b comenzando en off
+
+// █ Control de buffer
+void flush()
+// Fuerza escritura de bytes en buffer hacia destino
+
+// █ Gestión de recursos
+void close()
+// Cierra el stream y libera recursos

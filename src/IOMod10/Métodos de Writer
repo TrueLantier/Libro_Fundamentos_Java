@@ -1,0 +1,33 @@
+// █ Escritura de datos
+void write(int c)
+// Escribe un carácter
+
+void write(char[] cbuf)
+// Escribe array de caracteres
+
+void write(char[] cbuf, int off, int len)
+// Escribe porción del array
+
+void write(String str)
+// Escribe un String completo
+
+void write(String str, int off, int len)
+// Escribe porción del String
+
+// █ Métodos append (concatenación)
+Writer append(char c)
+// Añade un carácter y retorna this
+
+Writer append(CharSequence csq)
+// Añade CharSequence completo
+
+Writer append(CharSequence csq, int start, int end)
+// Añade porción del CharSequence
+
+// █ Control de buffer
+abstract void flush()
+// Fuerza escritura de caracteres en buffer
+
+// █ Gestión de recursos
+abstract void close()
+// Cierra el writer

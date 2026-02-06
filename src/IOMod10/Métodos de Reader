@@ -1,0 +1,37 @@
+// █ Lectura de datos
+int read()
+// Lee un carácter (0-65535)
+// Retorna -1 si fin del stream
+
+int read(char[] cbuf)
+// Lee caracteres en el array cbuf
+// Retorna número de caracteres leídos, o -1 si fin
+
+int read(char[] cbuf, int off, int len)
+// Lee hasta len caracteres en cbuf desde off
+// Retorna número de caracteres leídos, o -1 si fin
+
+int read(CharBuffer target)
+// Lee caracteres en el CharBuffer especificado
+// (NIO - más flexible que char[])
+
+// █ Lectura eficiente
+boolean ready()
+// Retorna true si el stream está listo para leer sin bloquear
+
+// █ Control de posición
+long skip(long n)
+// Salta n caracteres
+
+void mark(int readAheadLimit)
+// Marca posición actual
+
+void reset()
+// Regresa a la marca
+
+boolean markSupported()
+// Retorna true si soporta mark/reset
+
+// █ Gestión de recursos
+abstract void close()
+// Cierra el reader
