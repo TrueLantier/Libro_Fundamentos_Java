@@ -27,6 +27,12 @@ public class RandomAccessDemo {
 
             System.out.println("Aquí esta cada otro valor.");
 
+            System.out.println("Aquí está cada otro valor: ");
+            for (int i = 0; i < data.length; i += 2) {
+                raf.seek(8*i);
+                d = raf.readDouble();
+                System.out.print(d + " ");
+            }
         }   catch (IOException exc) {
             System.out.println("Error de E/S: " + exc);
         }

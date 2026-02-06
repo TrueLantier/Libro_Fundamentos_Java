@@ -21,7 +21,7 @@ public class ComparaciónArchivos {
 
             if (i != j) {
                 System.out.println("Archivos diferentes.");
-                System.out.println(j);
+                //System.out.println(j);
             }   else {
                 System.out.println("Archivos iguales");
             }

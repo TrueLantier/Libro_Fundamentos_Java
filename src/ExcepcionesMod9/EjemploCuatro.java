@@ -1,4 +1,4 @@
-package Mod9Excepciones;
+package ExcepcionesMod9;
 import java.io.IOException;
 
 public class EjemploCuatro {

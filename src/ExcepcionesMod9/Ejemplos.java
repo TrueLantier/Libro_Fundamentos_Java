@@ -1,4 +1,4 @@
-package Mod9Excepciones;
+package ExcepcionesMod9;
 
 public class Ejemplos {
     public static void main(String[] args) {

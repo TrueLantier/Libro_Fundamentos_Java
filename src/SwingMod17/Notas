@@ -1,0 +1,14 @@
+Componentes y contenedores:
+
+JApplet(deprecated)     JButton          JCheckBox       JCheckBoxMenuItem
+JColorChooser           JComboBox        JComponent      JDesktopPane
+JDialog                 JEditorPane      JFileChooser    JFormattedTextField
+JFrame                  JInternalFrame   JLabel          JLayer
+JLayeredPane            JList            JMenu           JMenuBar
+JMenuItem               JOptionPane      JPanel          JPasswordField
+JPopupMenu              JProgressBar     JRadioButton    JRadioButtonMenuItem
+JRootPane               JScrollBar       JScrollPane     JSeparator
+JSlider                 JSpinner         JSplitPane      JTabbedPane
+JTable                  JTextArea        JTextField      JTextPane
+JTogglebutton           JToolBar         JToolTip        JTree
+JViewport               JWindow
