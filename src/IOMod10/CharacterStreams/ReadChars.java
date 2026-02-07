@@ -21,6 +21,7 @@ public class ReadChars {
             System.out.println(c);
         }   while (c != '.');
 
+        buffer.efcBR2.close();
         br2.close();
         br3.close();
     }

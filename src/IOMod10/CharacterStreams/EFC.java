@@ -4,8 +4,9 @@ import java.nio.charset.StandardCharsets;
 //Entrada de la Consola usando Flujos de Caracteres.
 
 public class EFC {
-    /* BufferedReader efcBR1 = new BufferedReader(new InputStreamReader(System.in, System.console().charset()));
-       Da error cuando se ejecuta en Intellij IDEA.
+    /*
+    BufferedReader efcBR1 = new BufferedReader(new InputStreamReader(System.in, System.console().charset()));
+    Da error cuando se ejecuta en Intellij IDEA.
      */
     BufferedReader efcBR2 = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));
 }
