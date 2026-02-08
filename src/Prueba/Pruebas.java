@@ -1,4 +1,4 @@
-package SwingMod17;
+package Prueba;
 
 public class Pruebas {
     public static void main(String[] args) {
