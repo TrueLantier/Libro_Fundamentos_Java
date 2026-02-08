@@ -14,5 +14,7 @@ public class ReadLines {
             str = br.readLine();
             System.out.println(str);
         }   while (!str.equals("stop"));
+
+
     }
 }
