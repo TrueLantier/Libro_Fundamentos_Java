@@ -11,6 +11,8 @@ public class PrintWriterDemo {
         pw.println(i);
         pw.println(d);
         pw.println(i + " + " + d + " = " + (i+d));
-        pw.print("a");
+        pw.print("a"); // Hasta aquí no sale "a" pq hay que cerrar el flush manualmente.
+        pw.flush(); // Ahora sí sale.
+        pw.close();
     }
 }
