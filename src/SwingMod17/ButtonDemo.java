@@ -9,10 +9,11 @@ public class ButtonDemo implements ActionListener{
     ButtonDemo() {
         JFrame jFrame = new JFrame("Ejemplo Botón");
         jFrame.setLayout(new FlowLayout());
-        jFrame.setSize(220, 90);
+        jFrame.setSize(450, 450);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         jLabel = new JLabel("Press a button.");
+        JLabel jLabel2 = new JLabel();
 
         JButton jbUp = new JButton("Up");
         JButton jbDown = new JButton("Down");
