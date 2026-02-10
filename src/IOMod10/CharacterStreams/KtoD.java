@@ -7,6 +7,7 @@ public class KtoD {
         String str;
         BufferedReader br = new BufferedReader(new InputStreamReader((System.in), StandardCharsets.UTF_8));
         String ruta = "/home/angel/Documentos/ESCUELA/LibroFundamentosJava/src/IOMod10/CharacterStreams/text.txt";
+        String ruta2 = "prueba.txt";
 
         System.out.println("Introduce texto, 'stop' para terminar.");
         try (FileWriter fw = new FileWriter(ruta)){
