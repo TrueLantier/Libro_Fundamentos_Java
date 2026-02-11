@@ -14,8 +14,8 @@ public class TFDemo implements ActionListener{
         jfr.setSize(240, 120);
         jfr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        jtf = new JTextField(10);
-        jtf.setActionCommand("myTF");
+        jtf = new JTextField(10); // 10 columnas de ancho.
+        jtf.setActionCommand("myTF"); // Funciona igual sin esto pero mejor ponerlo.
 
         jbtnRev = new JButton("Reverse");
 
@@ -47,7 +47,7 @@ public class TFDemo implements ActionListener{
         }   else {
             jlabContents.setText("Has presionado ENTER. El text es: " + jtf.getText());
         }
-        ae.getSource();
+        // ae.getSource(); // Retorna el objeto evento.
     }
 
     public static void main(String[] args) {
