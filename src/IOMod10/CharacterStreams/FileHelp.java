@@ -3,7 +3,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 class Help {
-    String helpfile; // Nombre del archivo de ayuda.
+    private String helpfile; // Nombre del archivo de ayuda.
 
     Help(String helpfile) {
         this.helpfile = helpfile;
@@ -13,7 +13,7 @@ class Help {
         int ch;
         String topic, info;
 
-        try (BufferedReader helpBR = new BufferedReader(new FileReader(helpfile))){
+        try (BufferedReader helpBR = new BufferedReader(new FileReader(helpfile))) {
             do {
                 ch = helpBR.read();
 
@@ -36,22 +36,23 @@ class Help {
     }
 
     String getSelection() {
-        String tema = "";
+        String topic = "";
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));
         System.out.println("Escriba el tema: ");
         try {
-            tema = br.readLine();
+            topic = br.readLine();
         } catch (IOException e) {
             System.out.println("Error leyendo la consola.");
         }
-        return tema;
+        return topic;
     }
 }
 
 public class FileHelp {
     public static void main(String[] args) {
-        Help hlpobj = new Help("helpfile.txt");
+        String ruta = "src/IOMod10/CharacterStreams/helpfile.txt";
+        Help hlpobj = new Help(ruta);
         String topic;
 
         System.out.println("Prueba el sistema de ayuda. Ingresa 'stop' para terminar.");
