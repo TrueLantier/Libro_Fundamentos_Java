@@ -52,13 +52,13 @@ class Help {
 public class FileHelp {
     public static void main(String[] args) {
         String ruta = "src/IOMod10/CharacterStreams/helpfile.txt";
-        Help hlpobj = new Help(ruta);
+        Help hlpObj = new Help(ruta);
         String topic;
 
         System.out.println("Prueba el sistema de ayuda. Ingresa 'stop' para terminar.");
         do {
-            topic = hlpobj.getSelection();
-            if (!hlpobj.helpOn(topic)) {
+            topic = hlpObj.getSelection();
+            if (!hlpObj.helpOn(topic)) {
                 System.out.println("Tema no encontrado.\n");
             }
         }   while (topic.compareTo("stop") != 0);
