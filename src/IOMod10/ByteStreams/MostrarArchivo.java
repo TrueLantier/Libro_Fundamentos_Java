@@ -1,4 +1,4 @@
-package IOMod10;
+package IOMod10.ByteStreams;
 import java.io.*;
 
 public class MostrarArchivo {
