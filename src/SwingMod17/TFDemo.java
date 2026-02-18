@@ -18,6 +18,7 @@ public class TFDemo implements ActionListener{
         jtf.setActionCommand("myTF"); // Funciona igual sin esto pero mejor ponerlo.
 
         jbtnRev = new JButton("Reverse");
+        jbtnRev.setToolTipText("Vamos a ver."); // Para mostrar mensajes al señalar con el mouse.
 
         jtf.addActionListener(this);
         jbtnRev.addActionListener(this);

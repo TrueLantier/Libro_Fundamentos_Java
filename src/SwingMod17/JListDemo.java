@@ -17,6 +17,7 @@ public class JListDemo implements ListSelectionListener{
         jFrame.setSize(200, 160);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+
         jList = new JList<String>(nombres);
         jList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
