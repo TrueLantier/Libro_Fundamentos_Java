@@ -59,12 +59,13 @@ public class SwingFC implements ActionListener{
             do {
                 i = f1.read();
                 j = f2.read();
-                if (i != j) {
-                    jlabResult.setText("Los archivos no son iguales.");
-                    break;
-                }
+                if (i != j) break;
             }   while (i != -1 && j != -1);
-            jlabResult.setText("Los archivos son iguales.");
+
+            if (i != j)
+                jlabResult.setText("Los archivos no son iguales.");
+            else
+                jlabResult.setText("Los archivos son iguales.");
         }   catch (IOException exc) {
             jlabResult.setText("Error de archivos.");
         }
