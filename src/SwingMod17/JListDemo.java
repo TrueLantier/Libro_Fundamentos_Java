@@ -61,7 +61,7 @@ public class JListDemo implements ListSelectionListener, ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        jList.clearSelection();
+        jList.clearSelection(); // Deseleccionar los elementos.
         jLabel2.setText("Índice: " + idx);
     }
 
