@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="flatlaf-3">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../LIBRERÍAS/flatlaf-3.7-javadoc" />
+      <root url="file://$PROJECT_DIR$/../LIBRERÍAS/flatlaf-intellij-themes-3.7-javadoc" />
+      <root url="file://$PROJECT_DIR$/../LIBRERÍAS/flatlaf-swingx-3.7-javadoc" />
+      <root url="file://$PROJECT_DIR$/../LIBRERÍAS/miglayout-swing-11.4.2-javadoc" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

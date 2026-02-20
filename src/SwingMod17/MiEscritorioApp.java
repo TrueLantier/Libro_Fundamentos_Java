@@ -24,7 +24,7 @@ public class MiEscritorioApp extends JFrame{
     }
 
     private void crearVentanaInterna() {
-        // JInternalFrame funciona como un JFrame pero vive dentro del JDesktopPane
+        // JInternalFrame funciona como un JFrame pero vive dentro del JDesktopPane.
         JInternalFrame internalFrame =
                 new JInternalFrame("Ventana Documento", true, true, true, true);
 
