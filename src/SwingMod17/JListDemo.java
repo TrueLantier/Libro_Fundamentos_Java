@@ -1,6 +1,5 @@
 package SwingMod17;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.event.*;
 import javax.swing.*;
 
@@ -11,7 +10,10 @@ public class JListDemo implements ListSelectionListener{
 
     String[] nombres = {"Angel", "Eduardo", "Talía", "Beatriz", "Kamila", "Patricia", "Alejandra",
     "Yordanska", "Tania"};
-    JListDemo() {
+    JListDemo() throws Exception {
+        //UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); // Del sistema operativo
+        //UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel"); // Feo
         JFrame jFrame = new JFrame("JList Demo");
         jFrame.setLayout(new FlowLayout());
         jFrame.setSize(200, 180);
@@ -53,7 +55,11 @@ public class JListDemo implements ListSelectionListener{
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new JListDemo();
+                try {
+                    new JListDemo();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
     }

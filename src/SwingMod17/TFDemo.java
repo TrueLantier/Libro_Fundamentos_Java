@@ -8,10 +8,16 @@ public class TFDemo implements ActionListener{
     JButton jbtnRev;
     JLabel jlabPrompt, jlabContents;
 
-    TFDemo() {
+    TFDemo() throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+        UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); // Del sistema operativo
+        //UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"); // Por defecto de Java
+        //UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel"); // Feo
+
+
         JFrame jfr = new JFrame("Usar un campo de texto.");
         jfr.setLayout(new FlowLayout());
-        jfr.setSize(240, 120);
+        jfr.setSize(240, 180);
         jfr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         jtf = new JTextField(10); // 10 columnas de ancho.
@@ -46,7 +52,7 @@ public class TFDemo implements ActionListener{
             }
             jtf.setText(resStr);
         }   else {
-            jlabContents.setText("Has presionado ENTER. El text es: " + jtf.getText());
+            jlabContents.setText("Has presionado ENTER. El texto es: " + jtf.getText());
         }
         // ae.getSource(); // Retorna el objeto evento.
     }
@@ -55,7 +61,17 @@ public class TFDemo implements ActionListener{
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new TFDemo();
+                try {
+                    new TFDemo();
+                } catch (UnsupportedLookAndFeelException e) {
+                    throw new RuntimeException(e);
+                } catch (ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                } catch (InstantiationException e) {
+                    throw new RuntimeException(e);
+                } catch (IllegalAccessException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
     }
