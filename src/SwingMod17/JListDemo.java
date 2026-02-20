@@ -1,12 +1,16 @@
 package SwingMod17;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.event.*;
 import javax.swing.*;
 
-public class JListDemo implements ListSelectionListener{
+public class JListDemo implements ListSelectionListener, ActionListener{
     JList<String> jList;
     JLabel jLabel, jLabel2;
+    JButton jbtn;
     JScrollPane jscrlp;
+    int idx;
 
     String[] nombres = {"Angel", "Eduardo", "Talía", "Beatriz", "Kamila", "Patricia", "Alejandra",
     "Yordanska", "Tania"};
@@ -16,7 +20,7 @@ public class JListDemo implements ListSelectionListener{
         //UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel"); // Feo
         JFrame jFrame = new JFrame("JList Demo");
         jFrame.setLayout(new FlowLayout());
-        jFrame.setSize(200, 180);
+        jFrame.setSize(220, 200);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         jList = new JList<String>(nombres);
@@ -29,11 +33,15 @@ public class JListDemo implements ListSelectionListener{
         jLabel = new JLabel("Por favor elija un nombre: ");
         jLabel2 = new JLabel("Índice: ");
 
+        jbtn = new JButton("Deseleccionar");
+        jbtn.addActionListener(this);
+
         jList.addListSelectionListener(this);
 
         jFrame.add(jscrlp);
         jFrame.add(jLabel);
         jFrame.add(jLabel2);
+        jFrame.add(jbtn);
 
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
@@ -41,7 +49,7 @@ public class JListDemo implements ListSelectionListener{
 
     @Override
     public void valueChanged(ListSelectionEvent ls) {
-        int idx = jList.getSelectedIndex();
+        idx = jList.getSelectedIndex();
 
         if (idx != -1) {
             jLabel.setText("Selección actual: " + nombres[idx]);
@@ -49,6 +57,12 @@ public class JListDemo implements ListSelectionListener{
         }   else {
             jLabel.setText("Por favor elige un nombre");
         }
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        jList.clearSelection();
+        jLabel2.setText("Índice: " + idx);
     }
 
     public static void main(String[] args) {
