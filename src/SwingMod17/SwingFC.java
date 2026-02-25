@@ -13,6 +13,10 @@ public class SwingFC implements ActionListener{
     JLabel jlabFirst;
     JLabel jlabSecond;
     JLabel jlabResult;
+    JLabel jlabDiscrepancia;
+    JCheckBox jckb;
+    String discrepancia;
+    int posición;
 
     SwingFC() throws Exception{
         UIManager.setLookAndFeel(new FlatDarkLaf());
@@ -23,7 +27,7 @@ public class SwingFC implements ActionListener{
 
         JFrame jFrame = new JFrame("Comparación de archivos");
         jFrame.setLayout(new FlowLayout());
-        jFrame.setSize(200, 190);
+        jFrame.setSize(260, 280);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         jtfFirst = new JTextField(14);
@@ -37,6 +41,13 @@ public class SwingFC implements ActionListener{
         jlabFirst = new JLabel("Primer archivo");
         jlabSecond = new JLabel("Segundo archivo");
         jlabResult = new JLabel("");
+        jlabDiscrepancia = new JLabel("");
+
+        jckb = new JCheckBox("Mostrar la posición de la discrepancia.");
+        //jckb.addItemListener(this);
+        /**
+         * IMPORTANTE
+         */
 
         jFrame.add(jlabFirst);
         jFrame.add(jtfFirst);
@@ -44,6 +55,8 @@ public class SwingFC implements ActionListener{
         jFrame.add(jtfSecond);
         jFrame.add(jbtnComp);
         jFrame.add(jlabResult);
+        jFrame.add(jckb);
+        jFrame.add(jlabDiscrepancia);
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
     }
@@ -51,12 +64,13 @@ public class SwingFC implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent ae) {
         int i=0, j=0;
+        posición = 0;
 
-        if (jtfFirst.getText().equals("")) {
+        if (jtfFirst.getText().isEmpty()) {
             jlabResult.setText("Nombre del primer archivo falta.");
             return;
         }
-        if (jtfSecond.getText().equals("")) {
+        if (jtfSecond.getText().isEmpty()) {
             jlabResult.setText("Nombre del segundo archivo falta.");
             return;
         }
@@ -67,8 +81,20 @@ public class SwingFC implements ActionListener{
             do {
                 i = f1.read();
                 j = f2.read();
-                if (i != j) break;
-            }   while (i != -1 && j != -1);
+                if (i != j) {
+                    discrepancia = String.valueOf((char) i);
+                    break;
+                }
+                posición += 1;
+            }   while (i != -1);
+
+            if (jckb.isSelected()) {
+                if (discrepancia != null) {
+                    jlabDiscrepancia.setText("Hay un error: " + discrepancia + " posición: " + posición);
+                }
+            }   else {
+                jlabDiscrepancia.setText("");
+            }
 
             if (i != j)
                 jlabResult.setText("Los archivos no son iguales.");
@@ -78,6 +104,17 @@ public class SwingFC implements ActionListener{
             jlabResult.setText("Error de archivos.");
         }
     }
+
+//    @Override
+//    public void itemStateChanged(ItemEvent ie) {
+//        if (jckb.isSelected()) {
+//            if (discrepancia != null) {
+//                jlabDiscrepancia.setText("Hay un error: " + discrepancia + " posición: " + posición);
+//            }
+//        }   else {
+//            jlabDiscrepancia.setText("");
+//        }
+//    }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
