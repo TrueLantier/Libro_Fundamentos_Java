@@ -1,4 +1,6 @@
 package SwingMod17;
+
+import com.formdev.flatlaf.FlatDarkLaf;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -6,7 +8,13 @@ import java.awt.event.*;
 public class MiEscritorioApp extends JFrame{
     private JDesktopPane desktopPane;
 
-    public MiEscritorioApp() {
+    public MiEscritorioApp() throws UnsupportedLookAndFeelException {
+        UIManager.setLookAndFeel(new FlatDarkLaf());
+        //UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); // Del sistema operativo
+        //UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"); // Por defecto de Java
+        //UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel"); // Feo
+
         // Configuración básica. Hereda del JFrame no del JComponent.
         setTitle("Arquitectura Swing: JComponent y JDesktopPane");
         setSize(800, 600);
@@ -53,7 +61,11 @@ public class MiEscritorioApp extends JFrame{
     public static void main(String[] args) {
         SwingUtilities.invokeLater(()
         -> {
-            new MiEscritorioApp().setVisible(true);
+            try {
+                new MiEscritorioApp().setVisible(true);
+            } catch (UnsupportedLookAndFeelException e) {
+                throw new RuntimeException(e);
+            }
         });
     }
 }

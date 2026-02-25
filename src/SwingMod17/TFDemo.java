@@ -2,14 +2,16 @@ package SwingMod17;
 import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
+import com.formdev.flatlaf.*;
 
 public class TFDemo implements ActionListener{
     JTextField jtf;
     JButton jbtnRev;
     JLabel jlabPrompt, jlabContents;
 
-    TFDemo() throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+    TFDemo() throws Exception {
+        UIManager.setLookAndFeel(new FlatDarkLaf());
+        //UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
         //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); // Del sistema operativo
         //UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"); // Por defecto de Java
         //UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel"); // Feo
@@ -63,13 +65,7 @@ public class TFDemo implements ActionListener{
             public void run() {
                 try {
                     new TFDemo();
-                } catch (UnsupportedLookAndFeelException e) {
-                    throw new RuntimeException(e);
-                } catch (ClassNotFoundException e) {
-                    throw new RuntimeException(e);
-                } catch (InstantiationException e) {
-                    throw new RuntimeException(e);
-                } catch (IllegalAccessException e) {
+                } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
             }

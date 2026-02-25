@@ -1,4 +1,6 @@
 package SwingMod17;
+import com.formdev.flatlaf.FlatDarkLaf;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -12,7 +14,13 @@ public class SwingFC implements ActionListener{
     JLabel jlabSecond;
     JLabel jlabResult;
 
-    SwingFC() {
+    SwingFC() throws Exception{
+        UIManager.setLookAndFeel(new FlatDarkLaf());
+        //UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); // Del sistema operativo
+        //UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"); // Por defecto de Java
+        //UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel"); // Feo
+
         JFrame jFrame = new JFrame("Comparación de archivos");
         jFrame.setLayout(new FlowLayout());
         jFrame.setSize(200, 190);
@@ -75,7 +83,11 @@ public class SwingFC implements ActionListener{
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new SwingFC();
+                try {
+                    new SwingFC();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
     }
