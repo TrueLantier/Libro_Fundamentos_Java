@@ -1,5 +1,7 @@
 package SwingMod17;
-import com.formdev.flatlaf.FlatDarkLaf;
+
+import com.formdev.flatlaf.*;
+import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,12 +21,11 @@ public class SwingFC implements ActionListener{
     int posición;
 
     SwingFC() throws Exception{
-        UIManager.setLookAndFeel(new FlatDarkLaf());
+        UIManager.setLookAndFeel(new FlatMacDarkLaf());
         //UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
         //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); // Del sistema operativo
         //UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"); // Por defecto de Java
         //UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel"); // Feo
-
         JFrame jFrame = new JFrame("Comparación de archivos");
         jFrame.setLayout(new FlowLayout());
         jFrame.setSize(260, 280);
