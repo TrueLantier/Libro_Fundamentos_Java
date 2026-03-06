@@ -1,4 +1,6 @@
 package SwingMod17;
+import com.formdev.flatlaf.themes.FlatMacDarkLaf;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.event.*;
@@ -14,6 +16,7 @@ public class JListDemo implements ListSelectionListener, ActionListener {
     String[] nombres = {"Angel", "Eduardo", "Talía", "Beatriz", "Kamila", "Patricia", "Alejandra",
     "Yordanska", "Tania"};
     JListDemo() throws Exception {
+        UIManager.setLookAndFeel(new FlatMacDarkLaf());
         //UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
         //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); // Del sistema operativo
         //UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel"); // Feo
