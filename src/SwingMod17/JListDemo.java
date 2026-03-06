@@ -1,11 +1,10 @@
 package SwingMod17;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import javax.swing.event.*;
 import javax.swing.*;
 
-public class JListDemo implements ListSelectionListener, ActionListener{
+public class JListDemo implements ListSelectionListener, ActionListener {
     JList<String> jList;
     JLabel jLabel, jLabel2;
     JButton jbtn;
