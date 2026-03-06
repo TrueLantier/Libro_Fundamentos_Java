@@ -47,7 +47,7 @@ public class SwingFC implements ActionListener{
         jckb = new JCheckBox("Mostrar la posición de la discrepancia.");
         //jckb.addItemListener(this);
         /**
-         * IMPORTANTE
+         * IMPORTANTE, o tal vez no.
          */
 
         jFrame.add(jlabFirst);
