@@ -10,9 +10,9 @@ public class TFDemo implements ActionListener{
     JLabel jlabPrompt, jlabContents;
 
     TFDemo() throws Exception {
-        UIManager.setLookAndFeel(new FlatDarkLaf());
+        //UIManager.setLookAndFeel(new FlatDarkLaf());
         //UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-        //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); // Del sistema operativo
+        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); // Del sistema operativo
         //UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"); // Por defecto de Java
         //UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel"); // Feo
 
@@ -26,6 +26,10 @@ public class TFDemo implements ActionListener{
         jtf.setActionCommand("myTF"); // Funciona igual sin esto pero mejor ponerlo.
 
         jbtnRev = new JButton("Reverse");
+        //jbtnRev.setContentAreaFilled(false); // No rellenará el área de contenido.
+        jbtnRev.setBorderPainted(false); // No pintará el borde.
+        jbtnRev.setOpaque(false); // El botón no pintará su fondo.
+        jbtnRev.setFocusPainted(false); // No se ve el cuadro punteado cuando el botón tiene el foco.
         jbtnRev.setToolTipText("Vamos a ver."); // Para mostrar mensajes al señalar con el mouse.
 
         jtf.addActionListener(this);
