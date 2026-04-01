@@ -1,7 +1,7 @@
 package SwingMod17;
 
 import com.formdev.flatlaf.*;
-import com.formdev.flatlaf.themes.FlatMacDarkLaf;
+import com.formdev.flatlaf.themes.*;
 
 import javax.swing.*;
 import java.awt.*;
