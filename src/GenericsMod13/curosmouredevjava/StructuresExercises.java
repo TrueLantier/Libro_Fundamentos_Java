@@ -54,5 +54,9 @@ public class StructuresExercises {
         for (String elemento: novelasSet) {
             novelasMap.put(elemento, elemento);
         }
+
+        for (Map.Entry<String, String> novela: novelasMap.entrySet()) {
+            System.out.println(novela);
+        }
     }
 }
