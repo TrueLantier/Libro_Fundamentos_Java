@@ -83,3 +83,23 @@ Ambos representan "un lapso de tiempo" pero son conceptualmente diferentes:
 Una cosa que sorprende a muchos
 LocalDate implementa Comparable, entonces puedes ordenar una List<LocalDate> con Collections.sort() o 
 con streams sin ninguna configuración extra. Las fechas se ordenan cronológicamente de forma natural.
+
+---
+
+LocalDateTime — Fecha + hora, sin zona
+¿Cuándo usarlo en lugar de LocalDate?
+Cuando el momento exacto importa. Un préstamo de biblioteca puede vivir con solo fecha. 
+Pero un log de sistema, una transacción, o una reserva de sala necesitan saber si fue a las 9am 
+o a las 11pm. Ahí entra LocalDateTime.
+
+---
+
+La limitación que debes tener clara
+LocalDateTime no sabe nada del mundo real en términos de zonas horarias. Si guardas LocalDateTime.now() en Venezuela 
+y lo lees en España, el valor es el mismo número — no hay conversión automática. Para eso existe ZonedDateTime, 
+que veremos al final.
+Para sistemas locales (una app que corre en una sola región), LocalDateTime es suficiente y es lo que usarás 
+el 80% del tiempo.
+
+---
+

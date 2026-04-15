@@ -48,6 +48,4 @@ public class CrearFecha {
        // También puedes usar compareTo() — devuelve negativo, 0, o positivo
        prestamo.compareTo(hoy);
    }
-
-
 }
