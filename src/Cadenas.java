@@ -9,7 +9,6 @@ public class Cadenas {
         String cad5 = "Java es mi favorito actualmente. Por eso lo uso, me encanta hasta ahora.";
         String cad6 = "Javascript es muy bueno en web. Hola";
         String cad7 = "Adiós mundo.";
-        String subcad = cad5.substring(0,32);
 
 
         System.out.println( cad2.compareTo(cad3) + " " + cad2.compareTo(cad5) + " " + cad1.compareTo(cad3));
