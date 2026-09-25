@@ -18,7 +18,7 @@ public class List {
         System.out.println(names.getFirst() + " " + names.get(1) + " " + names.getLast());
 
         names.set(3, "Programador");
-        System.out.println(names.getLast());
+        System.out.println(names.get(3));
 
         numbers.add(0);
         numbers.add(0);
