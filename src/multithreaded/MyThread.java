@@ -1,5 +1,7 @@
 package multithreaded;
 
+// Básico.
+
 public class MyThread implements Runnable{
     String thrName;
 

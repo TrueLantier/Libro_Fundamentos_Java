@@ -1,5 +1,7 @@
 package multithreaded;
 
+// Mejorado.
+
 public class MyThreadImproved implements Runnable{
     Thread thrd;
 
