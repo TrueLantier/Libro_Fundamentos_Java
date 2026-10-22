@@ -37,6 +37,13 @@ class MyThreadArray implements Runnable{
     public void run() {
         System.out.println(thread.getName() + " starting.");
 
+        /*
+          Bloque synchronized si los métodos no son sincronizados -->
+          synchronized (sa) {
+              answer = sa.sumArray(a);
+          }
+         */
+
         answer = sa.sumArray(a);
         System.out.println("Sum for " + thread.getName() + " is " + answer);
         System.out.println(thread.getName() + " terminating");
