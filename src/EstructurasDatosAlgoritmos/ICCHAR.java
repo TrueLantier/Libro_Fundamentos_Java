@@ -13,4 +13,6 @@ Al la interfaz ser pública puede ser usada por clases de otros paquetes, y ella
 métodos. Sin embargo, como las excepciones son predeterminadas no podrán ser arrojas en otros paquetes,
 para ese necesitarían tener su propio archivo y ser públicas.
 Esto se traduce en: Problemas de visibilidad y encapsulamiento.
+
+Tremendo comentario tanke. Angel del futuro.
  */

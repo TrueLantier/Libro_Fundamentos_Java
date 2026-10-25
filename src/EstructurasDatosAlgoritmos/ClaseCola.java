@@ -1,35 +1,38 @@
 package EstructurasDatosAlgoritmos;
 
+import multithreaded.QueueThread;
+
 class ColaFija implements ICCHAR {
     private char[] q;
     private int putloc, getloc;
 
     ColaFija(int dim) {
-        q = new char[dim+1];
+        q = new char[dim];
         putloc = getloc = 0;
     }
 
     @Override
-    public void put(char ch) throws ColaLlenaExcepción {
-        if (putloc == q.length-1) {
+    public synchronized void put(char ch) throws ColaLlenaExcepción {
+        if (putloc == q.length) {
             throw new ColaLlenaExcepción(q.length-1);
         }
 
-        ++putloc;
         q[putloc] = ch;
+        ++putloc;
     }
     @Override
-    public char get() throws ColaVacíaExcepción{
+    public synchronized char get() throws ColaVacíaExcepción{
         if (getloc == putloc) {
             throw new ColaVacíaExcepción();
         }
 
         ++getloc;
-        return q[getloc];
+        return q[getloc-1];
     }
     @Override
-    public void reset() { getloc = putloc = 0; }
+    public synchronized void reset() { getloc = putloc = 0; }
 }
+
 class ColaCircular implements ICCHAR{
     private char[] q;
     private int putloc, getloc;
@@ -62,6 +65,7 @@ class ColaCircular implements ICCHAR{
     @Override
     public void reset() { getloc = putloc = 0; }
 }
+
 class ColaDin implements ICCHAR {
     private char[] q;
     private int putloc, getloc;
@@ -139,7 +143,7 @@ class Cola {
 }
 
 public class ClaseCola {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         ColaFija q1 = new ColaFija(10);
         ColaDin q2 = new ColaDin(5);
         ColaCircular q3 = new ColaCircular(10);
@@ -148,17 +152,26 @@ public class ClaseCola {
         char ch;
         int i;
 
-        try {
-            icchar = q1;
-            for (i = 0; i < 11; i++) {
-                icchar.put((char) ('A' + i));
-            }
-            System.out.println("Contenido de cola fija");
-            for (i = 0; i < 10; i++) {
-                ch = icchar.get();
-                System.out.print(ch);
-            }
-            System.out.println();
+        QueueThread h1 = new QueueThread("Hilo 1.");
+        QueueThread h2 = new QueueThread("Hilo 1.");
+
+        h1.icchar = q1;
+        h2.icchar = q1;
+
+        h1.thread.start();
+        h2.thread.start();
+
+//        try {
+//            icchar = q1;
+//            for (i = 0; i < 10; i++) {
+//                icchar.put((char) ('A' + i));
+//            }
+//            System.out.println("Contenido de cola fija");
+//            for (i = 0; i < 10; i++) {
+//                ch = icchar.get();
+//                System.out.print(ch + " ");
+//            }
+//            System.out.println();
 
 //            icchar = q2;
 //            for (i = 0; i < 10; i++) {
@@ -191,8 +204,8 @@ public class ClaseCola {
 //                System.out.print(ch);
 //            }
 //            System.out.println();
-        } catch (ColaLlenaExcepción | ColaVacíaExcepción e) {
-            System.out.println(e);
-        }
+//        } catch (ColaLlenaExcepción | ColaVacíaExcepción e) {
+//            System.out.println(e);
+//        }
     }
 }
