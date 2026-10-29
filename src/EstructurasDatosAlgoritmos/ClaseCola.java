@@ -143,7 +143,7 @@ class Cola {
 }
 
 public class ClaseCola {
-    static void main(String[] args) {
+    static void main(String[] args) throws InterruptedException {
         ColaFija q1 = new ColaFija(10);
         ColaDin q2 = new ColaDin(5);
         ColaCircular q3 = new ColaCircular(10);
@@ -152,13 +152,14 @@ public class ClaseCola {
         char ch;
         int i;
 
-        QueueThread h1 = new QueueThread("Hilo 1.");
-        QueueThread h2 = new QueueThread("Hilo 1.");
+        QueueThread h1 = new QueueThread("Hilo 1");
+        QueueThread h2 = new QueueThread("Hilo 2");
 
-        h1.icchar = q1;
-        h2.icchar = q1;
+        h1.icchar = q3;
+        h2.icchar = q3;
 
         h1.thread.start();
+        Thread.sleep(2000); // Como la cola es fija, no circular siempre se llena.
         h2.thread.start();
 
 //        try {
